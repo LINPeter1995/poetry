@@ -82,3 +82,9 @@ poetry add xxx
 退出虛擬環境
 
 deactivate
+
+激活虛擬環境
+
+poetry env activate
+
+source /home/ibame/.cache/pypoetry/virtualenvs/my-workspace-fr4v0Y-n-py3.11/bin/activate
