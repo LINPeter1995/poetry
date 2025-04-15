@@ -44,8 +44,19 @@ Would you like to define your development dependencies (require-dev) interactive
 
 Do you confirm generation? (yes/no) "yes"
 
-使用 Poetry 安裝套件
+查看 pyproject.toml 文件
+
+cat pyproject.toml
+
+安裝依賴
 
 poetry add pandas numpy
+
+啟動虛擬環境
+
+poetry shell
+
+
+
 
 
