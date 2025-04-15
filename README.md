@@ -56,8 +56,29 @@ poetry add pandas numpy
 
 poetry env activate
 
+執行一個 source 命令來啟動虛擬環境，這樣你就可以在這個虛擬環境中運行 Python 程式
 
+source /home/ibame/.cache/pypoetry/virtualenvs/my-workspace-fr4v0Y-n-py3.11/bin/activate
 
+執行後，你的命令行提示符通常會變更，顯示虛擬環境的名稱
 
+(my-workspace-fr4v0Y-n-py3.11) ibame@LAPTOP-E6T9QUMT:/mnt/c/Users/Tibame/Desktop/my_workspace$
 
+環境隔離
+這意味著在這個虛擬環境中，你可以安裝和使用專案所需的 Python 套件，並且不會影響到全系統的 Python 環境。
 
+所有安裝的依賴（例如：pandas、numpy 等）都只會在這個專案的虛擬環境內有效。
+
+-----------------------------------------------------------------------------------------------------------
+
+使用專案的 Python 和依賴
+
+python XXX.py
+
+安裝依賴
+
+poetry add xxx
+
+退出虛擬環境
+
+deactivate
