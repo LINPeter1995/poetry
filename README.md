@@ -1,5 +1,9 @@
 # poetry
 
+進入你的 WSL Linux 環境
+
+wsl
+
 安裝 Poetry
 
 curl -sSL https://install.python-poetry.org | python3 -
