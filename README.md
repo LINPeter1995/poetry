@@ -16,9 +16,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 poetry --version
 
-進入你的工作區資料夾
+進入你的工作區資料夾(資料夾右鍵複製路徑)
+在 WSL 中，Windows 的磁碟分區會被掛載到 /mnt 目錄下。例如，C: 驅動器會映射到 /mnt/c
 
-cd /path/to/my_workspace
+cd /mnt/c/Users/Tibame/Desktop/my_workspace
+
 
 在現有資料夾中初始化 Poetry
 
