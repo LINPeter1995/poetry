@@ -1,16 +1,24 @@
 # poetry
 
+安裝 Poetry
+
 curl -sSL https://install.python-poetry.org | python3 -
+
+設定 PATH
 
 export PATH="$HOME/.local/bin:$PATH"
 
+確認安裝成功
+
 poetry --version
 
-設定 Poetry 使用 pyenv 的 Python
+進入你的工作區資料夾
 
-poetry new my_project
-cd my_project
-poetry env use $(pyenv which python)
+cd /path/to/my_workspace
+
+在現有資料夾中初始化 Poetry
+
+poetry init
 
 使用 Poetry 安裝套件
 
