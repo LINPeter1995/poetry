@@ -52,9 +52,10 @@ cat pyproject.toml
 
 poetry add pandas numpy
 
-啟動虛擬環境
+使用 poetry env activate
 
-poetry shell
+poetry env activate
+
 
 
 
