@@ -1,3 +1,5 @@
+要使用 Poetry，你本機必須先安裝好 Python
+
 看起來你在 Windows PowerShell 嘗試安裝 Python 的 Poetry 工具時，遇到了一些問題。這裡是根據你的錯誤訊息整理的分析和解決方法：
 
 🔍 問題整理：
