@@ -4,6 +4,8 @@
 
 wsl
 
+要使用 Poetry，你本機必須先安裝好 Python
+
 安裝 Poetry
 
 curl -sSL https://install.python-poetry.org | python3 -
