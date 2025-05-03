@@ -1,59 +1,59 @@
-要使用 Poetry，你本機必須先安裝好 Python
+Poetry 安裝問題與解決方案（Windows PowerShell）
 
-看起來你在 Windows PowerShell 嘗試安裝 Python 的 Poetry 工具時，遇到了一些問題。這裡是根據你的錯誤訊息整理的分析和解決方法：
-
-🔍 問題整理：
-你已執行
-
-powershell
+你使用 PowerShell 安裝 Poetry：
 
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
-系統回應是：
+
+系統顯示：
 
 The latest version (2.1.2) is already installed.
 
-➤ 表示安裝已完成。
+表示 Poetry 已安裝完成。
 
-但你接著執行
-
-powershell
+但執行：
 
 poetry --version
 
-系統回應：
+poetry 不是內部或外部命令...
 
-無法辨識 'poetry' 詞彙是否為 Cmdlet...
+表示系統找不到 poetry 指令，原因是 未將 Poetry 安裝路徑加入 PATH 環境變數。
 
-➤ 表示 Poetry 沒有加到你的 PATH 環境變數。
+解決方式
 
-你試圖使用 Linux 風格的安裝語法：
+步驟 1：找出 Poetry 安裝路徑
 
-POETRY_HOME=/etc/poetry python3 -
-➤ 這段語法是 Linux 或 macOS bash shell 的格式，不能直接在 PowerShell 使用。
-
-✅ 解決方式：
-
-📌 1. 確認 Poetry 安裝位置
-
-Poetry 通常會安裝在使用者目錄下的 AppData\Roaming\Python\Scripts 或 .poetry\bin。請執行以下指令來找出 poetry.exe 的路徑：
+請執行以下 PowerShell 指令尋找 poetry.exe 所在位置：
 
 Get-ChildItem -Path $env:USERPROFILE -Recurse -Filter "poetry.exe" -ErrorAction SilentlyContinue
 
-📌 2. 手動加入 PATH
-若你找到 poetry.exe 例如在這裡：
+常見路徑可能是：
 
-C:\Users\Tibame\AppData\Roaming\Python\Scripts\
+C:\Users\你的使用者名稱\AppData\Roaming\Python\Scripts\
 
-請將這個路徑加到你的系統環境變數中。
+或
 
-方法：
+C:\Users\你的使用者名稱\AppData\Roaming\Python\Poetry\bin\
 
-開啟【系統環境變數】 > 【環境變數】
+步驟 2：將路徑加入環境變數 Path
 
-找到「使用者變數」中的 Path > 編輯
+開啟 系統環境變數設定：
 
-新增你找到的 poetry.exe 所在資料夾的路徑
+在搜尋欄輸入「環境變數」並開啟 「編輯系統環境變數」。
 
-儲存後重新開啟 PowerShell，再輸入：
+點擊右下角【環境變數 (Environment Variables)】
+
+在「使用者變數」找到 Path，點【編輯】
+
+點【新增】，將剛才找到的 Poetry 路徑貼上
+
+儲存所有視窗並關閉
+
+步驟 3：重新啟動 PowerShell
+
+關閉目前的 PowerShell 視窗，再開啟新的，輸入：
 
 poetry --version
+
+若成功，會顯示類似：
+
+Poetry (version 2.1.2)
