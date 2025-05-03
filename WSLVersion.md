@@ -1,92 +1,94 @@
-# poetry
+使用 Poetry 管理 Python 專案（WSL 環境）完整流程筆記
 
-進入你的 WSL Linux 環境
+一、環境準備
+
+1. 進入 WSL（Linux 子系統）
 
 wsl
 
-要使用 Poetry，你本機必須先安裝好 Python
+2. 確保已安裝 Python（建議使用 pyenv 管理）
 
-安裝 Poetry
+⸻
+
+二、安裝 Poetry
+
+1. 安裝 Poetry（使用官方安裝指令）
 
 curl -sSL https://install.python-poetry.org | python3 -
 
-設定 PATH
+2. 設定環境變數 PATH
 
 export PATH="$HOME/.local/bin:$PATH"
 
-確認安裝成功
+3. 確認安裝成功
 
 poetry --version
 
-進入你的工作區資料夾(資料夾右鍵複製路徑) 在 WSL 中，Windows 的磁碟分區會被掛載到 /mnt 目錄下。例如，C: 驅動器會映射到 /mnt/c
+三、設定專案資料夾
+
+1. 前往 Windows 的工作目錄（範例）
 
 cd /mnt/c/Users/Tibame/Desktop/my_workspace
 
-在現有資料夾中初始化 Poetry
+2. 初始化 Poetry 專案
 
 poetry init
 
-This command will guide you through creating your pyproject.toml config.
+依照提示輸入（以下可直接 Enter 跳過）：
+	•	Package name：Enter
+	•	Version：Enter
+	•	Description：Enter
+	•	Author：可輸入 Peter <liyanglin08@gmail.com> 或 n 跳過
+	•	License：Enter
+	•	Compatible Python versions：Enter
+	•	Define dependencies interactively? → no
+	•	Define dev-dependencies interactively? → no
+	•	Do you confirm generation? → yes
 
-Package name [my_workspace]:  # 你可以直接按 Enter 或輸入名稱
-
-Version [0.1.0]:  # 你可以直接按 Enter
-
-Description []:  # 你可以直接按 Enter
-
-Author [None, n to skip]:  # 請直接輸入你的作者名稱 Peter <liyanglin08@gmail.com>，你可以輸入 n 來跳過這一項
-
-License []:  # 你可以直接按 Enter
-
-Compatible Python versions [>=3.11]:  # 選擇 Python 版本或按 Enter
-
-Would you like to define your dependencies (require) interactively? (yes/no) [yes]: no  # 如果不需要新增依賴，可以選擇 "no"
-
-Would you like to define your development dependencies (require-dev) interactively? (yes/no) [yes]: no  # 如果不需要開發依賴，可以選擇 "no"
-
-Do you confirm generation? (yes/no) "yes"
-
-查看 pyproject.toml 文件
+3. 查看 pyproject.toml
 
 cat pyproject.toml
 
-安裝依賴
+四、安裝專案依賴
+
+安裝範例依賴（如 pandas, numpy）
 
 poetry add pandas numpy
 
-使用 poetry env activate
+五、啟動虛擬環境
 
-poetry env activate
+方法一：讓 Poetry 幫你啟動（推薦）
 
-執行一個 source 命令來啟動虛擬環境，這樣你就可以在這個虛擬環境中運行 Python 程式
+poetry shell
+
+方法二：手動啟動虛擬環境（路徑可能依每台機器不同）
 
 source /home/ibame/.cache/pypoetry/virtualenvs/my-workspace-fr4v0Y-n-py3.11/bin/activate
 
-執行後，你的命令行提示符通常會變更，顯示虛擬環境的名稱
+執行後，命令列會變成這樣：
 
-(my-workspace-fr4v0Y-n-py3.11) ibame@LAPTOP-E6T9QUMT:/mnt/c/Users/Tibame/Desktop/my_workspace$
+(my-workspace-fr4v0Y-n-py3.11) ibame@LAPTOP:/mnt/c/Users/Tibame/Desktop/my_workspace$
 
-環境隔離
-這意味著在這個虛擬環境中，你可以安裝和使用專案所需的 Python 套件，並且不會影響到全系統的 Python 環境。
+六、使用虛擬環境中的 Python
 
-所有安裝的依賴（例如：pandas、numpy 等）都只會在這個專案的虛擬環境內有效。
+執行 Python 程式（在虛擬環境中）
 
------------------------------------------------------------------------------------------------------------
+python your_script.py
 
-使用專案的 Python 和依賴
+七、額外操作指令
 
-python XXX.py
+安裝新的依賴
 
-安裝依賴
+poetry add 套件名稱
 
-poetry add xxx
-
-退出虛擬環境
+離開虛擬環境
 
 deactivate
 
-激活虛擬環境
+重新啟動虛擬環境
 
-poetry env activate
+poetry shell
 
-source /home/ibame/.cache/pypoetry/virtualenvs/my-workspace-fr4v0Y-n-py3.11/bin/activate
+或（手動方式）：
+
+source /home/ibame/.cache/pypoetry/virtualenvs/my-workspace-xxx/bin/activate
