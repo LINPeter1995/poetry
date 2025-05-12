@@ -14,10 +14,6 @@ Get-ChildItem -Path $env:USERPROFILE -Recurse -Filter "poetry.exe" -ErrorAction 
 
 C:\Users\你的使用者名稱\AppData\Roaming\Python\Scripts\
 
-或
-
-C:\Users\你的使用者名稱\AppData\Roaming\Python\Poetry\bin\
-
 步驟 2：將路徑加入環境變數 Path
 
 開啟 系統環境變數設定：
