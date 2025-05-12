@@ -10,23 +10,11 @@ Poetry 安裝問題與解決方案（Windows PowerShell）
 
 Get-Command poetry
 
+步驟 2：將路徑加入環境變數 Path
+
 常見路徑可能是：
 
 C:\Users\User\AppData\Roaming\Python\Scripts\
-
-步驟 2：將路徑加入環境變數 Path
-
-開啟 系統環境變數設定：
-
-在搜尋欄輸入「環境變數」並開啟 「編輯系統環境變數」。
-
-點擊右下角【環境變數 (Environment Variables)】
-
-在「使用者變數」找到 Path，點【編輯】
-
-點【新增】，將剛才找到的 Poetry 路徑貼上
-
-儲存所有視窗並關閉
 
 步驟 3：重新啟動 PowerShell
 
