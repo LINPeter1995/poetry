@@ -2,7 +2,7 @@ Poetry 安裝問題與解決方案（Windows PowerShell）
 
 你使用 PowerShell 安裝 Poetry：
 
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
 
 步驟 1：加入環境變數-系統變數-Path
 
