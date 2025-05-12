@@ -4,23 +4,7 @@ Poetry 安裝問題與解決方案（Windows PowerShell）
 
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 
-系統顯示：
-
-The latest version (2.1.2) is already installed.
-
-表示 Poetry 已安裝完成。
-
-但執行：
-
-poetry --version
-
-poetry 不是內部或外部命令...
-
-表示系統找不到 poetry 指令，原因是 未將 Poetry 安裝路徑加入 PATH 環境變數。
-
-解決方式
-
-步驟 1：找出 Poetry 安裝路徑
+步驟 1：加入環境變數-系統變數-Path
 
 請執行以下 PowerShell 指令尋找 poetry.exe 所在位置：
 
