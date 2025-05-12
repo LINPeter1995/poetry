@@ -8,11 +8,11 @@ Poetry 安裝問題與解決方案（Windows PowerShell）
 
 請執行以下 PowerShell 指令尋找 poetry.exe 所在位置：
 
-Get-ChildItem -Path $env:USERPROFILE -Recurse -Filter "poetry.exe" -ErrorAction SilentlyContinue
+Get-Command poetry
 
 常見路徑可能是：
 
-C:\Users\你的使用者名稱\AppData\Roaming\Python\Scripts\
+C:\Users\User\AppData\Roaming\Python\Scripts\
 
 步驟 2：將路徑加入環境變數 Path
 
