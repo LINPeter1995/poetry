@@ -22,6 +22,10 @@ C:\Users\User\AppData\Roaming\Python\Scripts\
 
 poetry --version
 
+更新為最新版本:
+
+poetry self update
+
 若成功，會顯示類似：
 
 Poetry (version 2.1.2)
